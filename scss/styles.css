@@ -1,0 +1,739 @@
+/* || GENERAL STYLES */
+/*COLORES UTILIZADOS:
+#343c40 Color letra
+#1B2328 Color enlaces
+#586070 Color botones 
+#ededed Color formulario
+#ffffff Color fondo
+*/
+/***************************************** || MAIN CONTAINERS */
+#indexContent {
+  margin: 0 auto;
+  width: 700px;
+}
+
+/***************************************** && Header */
+#mainHeader {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#leftHeader img {
+  width: 75px;
+  height: 75px;
+}
+
+#rightHeader {
+  display: flex;
+  justify-content: stretch;
+}
+
+#rightHeader img {
+  width: 30px;
+  height: 30px;
+}
+
+/***************************************** && Navigation bar */
+#mainNav ul {
+  background-color: #ffffff;
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+}
+
+#mainNav ul li a {
+  display: block;
+  padding: 20px;
+  color: black;
+  text-decoration: none;
+}
+
+#mainNav ul li:nth-child(1) a {
+  font-weight: normal;
+  text-decoration: none;
+}
+
+#mainNav ul li:nth-child(2) a {
+  font-weight: normal;
+  text-decoration: none;
+}
+
+#mainNav ul li:nth-child(3) a {
+  font-weight: normal;
+  text-decoration: none;
+}
+
+#mainNav ul li:nth-child(4) a {
+  font-weight: normal;
+  text-decoration: none;
+}
+
+#mainNav ul li a:hover {
+  display: block;
+  padding: 20px;
+  color: black;
+  text-decoration: none;
+  transition: 1s;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  background-color: grey;
+  border-radius: 6px;
+}
+
+#mainNav ul li a.seleccionada {
+  display: block;
+  padding: 20px;
+  color: black;
+  text-decoration: underline;
+  font-weight: bolder;
+  font-size: x-large;
+}
+
+/***************************************** && Main section INDEX*/
+#mainSectionIndex {
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-template-areas: "imagenppal imagenppal" "slogan slogan" "android iphone" "tienda tienda";
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  row-gap: 15px;
+}
+
+#mainSectionIndex article#imagenppal {
+  grid-area: imagenppal;
+  /*    background-image: url("../images/imagen-principal.jpg"); */
+  aspect-ratio: 16/5;
+}
+
+#mainSectionIndex article#imagenppal img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+#mainSectionIndex article#slogan {
+  grid-area: slogan;
+  text-align: center;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+#mainSectionIndex article#android {
+  grid-area: android;
+  display: flex;
+  flex-direction: column-reverse;
+  height: 390px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: xx-large;
+  text-align: left;
+  /*    text-justify: initial;
+      background-image: url("../images/android.jpg"); 
+      background-size: contain;
+      background-position: 100% 100%;
+      background-repeat: no-repeat;
+  */
+}
+
+#mainSectionIndex article#android a {
+  position: relative;
+  top: 90%;
+  left: 5%;
+}
+
+#mainSectionIndex article#android img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+#mainSectionIndex article#iphone {
+  grid-area: iphone;
+  display: flex;
+  flex-direction: column-reverse;
+  height: 390px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: xx-large;
+  text-align: right;
+  /*    text-justify: initial;
+      background-image: url("../images/iphone.jpg"); 
+      background-size: contain; 
+      background-position: 100% 100%;
+      background-repeat: no-repeat;
+  */
+}
+
+#mainSectionIndex article#iphone a {
+  position: relative;
+  top: 90%;
+  right: 5%;
+}
+
+#mainSectionIndex article#iphone img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+#mainSectionIndex article a {
+  text-decoration: none;
+  color: black;
+}
+
+/*
+#mainSectionIndex article img {
+    object-fit: cover;
+    width:100%;
+    height:100%;
+}
+*/
+#tienda {
+  margin: 0 auto;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  row-gap: 15px;
+}
+
+#tienda article#tienda1 {
+  grid-area: tienda;
+  display: flex;
+  flex-direction: column-reverse;
+  font-weight: bold;
+  font-size: xx-large;
+  text-align: center;
+  aspect-ratio: 16/5;
+  /*    height: 400px;
+      background-image: url("../images/tienda.jpg");
+      background-size: contain;
+      background-position: 100% 100%;
+      background-repeat: no-repeat; 
+  */
+}
+
+#tienda article#tienda1 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+#textotienda {
+  position: relative;
+  top: -25%;
+  left: 5%;
+}
+
+/* 
+#tienda article img {
+    object-fit: cover;
+    width:100%;
+    height:100%;
+}
+*/
+/************************************************ && Main section ANDROID*/
+#mainSectionAndroid {
+  /*    background-color: #ffffff; */
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-template-areas: "androidmenu androidmenu" "androidart1 androidart2" "androidart3 androidart4" "androidart5 ." "tienda tienda";
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  row-gap: 15px;
+}
+
+#mainSectionAndroid article#androidmenu {
+  grid-area: androidmenu;
+}
+
+#mainSectionAndroid article#androidart1 {
+  grid-area: androidart1;
+}
+
+#mainSectionAndroid article#androidart2 {
+  grid-area: androidart2;
+}
+
+#mainSectionAndroid article#androidart3 {
+  grid-area: androidart3;
+}
+
+#mainSectionAndroid article#androidart4 {
+  grid-area: androidart4;
+}
+
+#mainSectionAndroid article#androidart5 {
+  grid-area: androidart5;
+}
+
+#mainSectionAndroid article img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/******************************************************* && Navigation bar ANDROID*/
+#androidNav ul {
+  background-color: #ffffff;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+#androidNav ul li a {
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  background-color: #586070;
+  border-radius: 15px;
+  font-size: xx-large;
+}
+
+#androidNav ul li a:hover {
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  background-color: #586070;
+  border-radius: 15px;
+  font-size: xx-large;
+  transition: 1s;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  background-color: grey;
+}
+
+#androidNav ul li:nth-child(1) a {
+  font-weight: normal;
+  text-decoration: none;
+}
+
+#androidNav ul li:nth-child(2) a {
+  font-weight: normal;
+  text-decoration: none;
+}
+
+#androidNav ul li:nth-child(3) a {
+  font-weight: normal;
+  text-decoration: none;
+}
+
+#androidNav ul li:nth-child(4) a {
+  font-weight: normal;
+  text-decoration: none;
+}
+
+#androidNav ul li a.seleccionada {
+  text-decoration: underline;
+}
+
+/******************************************************* && Main section IPHONE*/
+#mainSectionIphone {
+  /*    background-color: #ffffff; */
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-template-areas: "iphoneppal iphoneppal" "iphoneart1 iphoneart2" "iphoneart3 iphoneart4" "tienda tienda";
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  row-gap: 15px;
+}
+
+#mainSectionIphone article#iphoneppal {
+  grid-area: iphoneppal;
+  /*    background-image: url("../images/iphone_principal.jpg"); */
+  aspect-ratio: 16/5;
+}
+
+#mainSectionIphone article#iphoneppal img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+#mainSectionIphone article#iphoneart1 {
+  grid-area: iphoneart1;
+}
+
+#mainSectionIphone article#iphoneart2 {
+  grid-area: iphoneart2;
+}
+
+#mainSectionIphone article#iphoneart3 {
+  grid-area: iphoneart3;
+}
+
+#mainSectionIphone article#iphoneart4 {
+  grid-area: iphoneart4;
+}
+
+#mainSectionIphone article img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/******************************************************** && Main section COMPARADOR*/
+#mainSectionComparador {
+  margin: 0 auto;
+  grid-template-columns: repeat(3, 1fr);
+  display: grid;
+  grid-template-areas: "comparappal comparappal comparappal" "comparaandroid comparaiphone1 comparaiphone2" "tienda tienda tienda";
+  -moz-column-gap: 35px;
+       column-gap: 35px;
+  row-gap: 15px;
+}
+
+#mainSectionComparador article#comparappal {
+  grid-area: comparappal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+}
+
+#mainSectionComparador article#comparaandroid {
+  grid-area: comparaandroid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#mainSectionComparador article#comparaiphone1 {
+  grid-area: comparaiphone1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#mainSectionComparador article#comparaiphone2 {
+  grid-area: comparaiphone2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#mainSectionComparador article img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 50%;
+  height: 50%;
+}
+
+#mainSectionComparador article#comparappal img {
+  -o-object-fit: fill;
+     object-fit: fill;
+  width: 30%;
+  height: 30%;
+}
+
+/********************************************************** && Main section CONTACTA*/
+#mainSectionContacta {
+  /*    background-color: #ffffff; */
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-template-areas: "contacta1 contacta1" "contacta2 contacta2" "contacta3 contacta3" "contacta4 contacta4" "contacta5 contacta5" "contacta6 contacta7";
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  row-gap: 15px;
+}
+
+#mainSectionContacta article#contacta1 {
+  grid-area: contacta1;
+  aspect-ratio: 16/5;
+}
+
+#mainSectionContacta article#contacta2 {
+  grid-area: contacta2;
+  text-align: center;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+#mainSectionContacta article#contacta3 {
+  grid-area: contacta3;
+  text-align: center;
+  align-items: center;
+}
+
+#mainSectionContacta article#contacta4 {
+  grid-area: contacta4;
+}
+
+#formulario {
+  /*    display:flex;
+      flex-direction: column;
+      align-items:first baseline;
+  */
+  width: 450px;
+  padding: 16px;
+  margin: auto;
+  background-color: grey;
+  resize: none;
+  display: block;
+}
+
+#formulario textarea {
+  width: 100%;
+  height: 100px;
+}
+
+#afterform {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row;
+}
+
+#enviar {
+  border-radius: 15px;
+  background-color: black;
+  color: #ffffff;
+  font-size: large;
+  width: 100%;
+  margin: 15px 0px 15px 0px;
+}
+
+#mainSectionContacta article#contacta5 {
+  grid-area: contacta5;
+  text-align: center;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+#mainSectionContacta article#contacta6 {
+  grid-area: contacta6;
+}
+
+#mainSectionContacta article#contacta7 {
+  grid-area: contacta7;
+}
+
+#mainSectionContacta article img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+#mainSectionContacta article#contacta1 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.mapatexto {
+  text-align: center;
+  font-size: small;
+}
+
+.mapatitle {
+  text-align: center;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+/********************************************************** && Main section COMPRA*/
+#mainSectionCompra {
+  margin: 0 auto;
+  grid-template-columns: repeat(1, 1fr);
+  display: grid;
+  grid-template-areas: "compra1" "compra2" "compra3";
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+  row-gap: 15px;
+}
+
+#mainSectionCompra article#compra1 {
+  grid-area: compra1;
+  aspect-ratio: 16/5;
+}
+
+#mainSectionCompra article#compra2 {
+  grid-area: compra2;
+  text-align: center;
+  font-weight: bold;
+  font-size: xx-large;
+}
+
+#mainSectionCompra article#compra3 {
+  grid-area: compra3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mainSectionCompra article#compra4 {
+  grid-area: compra4;
+}
+
+#mainSectionCompra article#compra1 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+#mainSectionCompra table {
+  width: 65%;
+}
+
+#mainSectionCompra tr img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 60%;
+  height: 60%;
+}
+
+.tcantpre {
+  text-align: right;
+  text-justify: left;
+  font-weight: bolder;
+  font-size: larger;
+  white-space: nowrap;
+  margin-left: 0;
+}
+
+.tdetalle {
+  text-align: right;
+  text-justify: center;
+  white-space: nowrap;
+}
+
+/************************************************************ && Footer */
+.mainFooter {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.socialFooter {
+  background-color: #ffffff;
+}
+
+.socialFooter img {
+  width: 20px;
+  height: 20px;
+}
+
+.disclaimerFooter {
+  background-color: #ffffff;
+}
+
+.disclaimerFooter ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+}
+
+.disclaimerFooter ul li a {
+  padding: 20px;
+  color: black;
+  text-decoration: none;
+  font-size: smaller;
+}
+
+/*********************************************************TARJETAS*/
+.card {
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  grid-template-areas: "cardleft cardright";
+  -moz-column-gap: 5px;
+       column-gap: 5px;
+  border-radius: 15px;
+  background-color: #586070;
+  color: #ffffff;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.cardleft {
+  grid-area: cardleft;
+  display: flex;
+  flex-direction: column;
+  align-content: left;
+}
+
+.cardright {
+  grid-area: cardright;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.cardright .modelo {
+  text-align: left;
+  font-size: large;
+}
+
+.specs {
+  text-align: left;
+  font-size: x-small;
+  line-height: 150%;
+}
+
+.cardleft img {
+  -o-object-fit: fill;
+     object-fit: fill;
+  max-width: 60%;
+  max-height: 90%;
+  margin: 15% 15%;
+}
+
+.cardright .botonera {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: right;
+}
+
+.cardright button {
+  border-radius: 10px;
+  background-color: #586070;
+  color: #ffffff;
+  font-size: x-small;
+  margin: auto auto;
+}
+
+.cardcomp {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffffff;
+  color: #343c40;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.cardcomp img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  min-width: 80%;
+}
+
+.cardcomp .modelo {
+  font-size: large;
+  text-align: center;
+  font-weight: bold;
+}
+
+.cardcomp .specs {
+  text-align: center;
+  font-size: small;
+}
+
+.comparer td {
+  border-top: groove;
+}/*# sourceMappingURL=styles.css.map */
