@@ -1,11 +1,3 @@
-/* || GENERAL STYLES */
-/*COLORES UTILIZADOS:
-#343c40 Color letra
-#1B2328 Color enlaces
-#586070 Color botones 
-#ededed Color formulario
-#ffffff Color fondo
-*/
 /***************************************** || MAIN CONTAINERS */
 #indexContent {
   margin: 0 auto;
@@ -13,26 +5,28 @@
 }
 
 /***************************************** && Header */
+#rightHeader, #mainHeader {
+  display: flex;
+}
+
 #mainHeader {
   background-color: #ffffff;
-  display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-#leftHeader img {
-  width: 75px;
-  height: 75px;
-}
-
 #rightHeader {
-  display: flex;
   justify-content: stretch;
 }
 
 #rightHeader img {
   width: 30px;
   height: 30px;
+}
+
+#leftHeader img {
+  width: 75px;
+  height: 75px;
 }
 
 /***************************************** && Navigation bar */
@@ -93,18 +87,17 @@
 
 /***************************************** && Main section INDEX*/
 #mainSectionIndex {
-  margin: 0 auto;
-  grid-template-columns: repeat(2, 1fr);
-  display: grid;
   grid-template-areas: "imagenppal imagenppal" "slogan slogan" "android iphone" "tienda tienda";
+  margin: 0 auto;
+  display: grid;
   -moz-column-gap: 15px;
        column-gap: 15px;
   row-gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 #mainSectionIndex article#imagenppal {
   grid-area: imagenppal;
-  /*    background-image: url("../images/imagen-principal.jpg"); */
   aspect-ratio: 16/5;
 }
 
@@ -131,12 +124,6 @@
   font-weight: bold;
   font-size: xx-large;
   text-align: left;
-  /*    text-justify: initial;
-      background-image: url("../images/android.jpg"); 
-      background-size: contain;
-      background-position: 100% 100%;
-      background-repeat: no-repeat;
-  */
 }
 
 #mainSectionIndex article#android a {
@@ -161,12 +148,6 @@
   font-weight: bold;
   font-size: xx-large;
   text-align: right;
-  /*    text-justify: initial;
-      background-image: url("../images/iphone.jpg"); 
-      background-size: contain; 
-      background-position: 100% 100%;
-      background-repeat: no-repeat;
-  */
 }
 
 #mainSectionIndex article#iphone a {
@@ -187,13 +168,6 @@
   color: black;
 }
 
-/*
-#mainSectionIndex article img {
-    object-fit: cover;
-    width:100%;
-    height:100%;
-}
-*/
 #tienda {
   margin: 0 auto;
   -moz-column-gap: 15px;
@@ -209,12 +183,6 @@
   font-size: xx-large;
   text-align: center;
   aspect-ratio: 16/5;
-  /*    height: 400px;
-      background-image: url("../images/tienda.jpg");
-      background-size: contain;
-      background-position: 100% 100%;
-      background-repeat: no-repeat; 
-  */
 }
 
 #tienda article#tienda1 img {
@@ -230,23 +198,15 @@
   left: 5%;
 }
 
-/* 
-#tienda article img {
-    object-fit: cover;
-    width:100%;
-    height:100%;
-}
-*/
 /************************************************ && Main section ANDROID*/
 #mainSectionAndroid {
-  /*    background-color: #ffffff; */
-  margin: 0 auto;
-  grid-template-columns: repeat(2, 1fr);
-  display: grid;
   grid-template-areas: "androidmenu androidmenu" "androidart1 androidart2" "androidart3 androidart4" "androidart5 ." "tienda tienda";
+  margin: 0 auto;
+  display: grid;
   -moz-column-gap: 15px;
        column-gap: 15px;
   row-gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 #mainSectionAndroid article#androidmenu {
@@ -336,19 +296,17 @@
 
 /******************************************************* && Main section IPHONE*/
 #mainSectionIphone {
-  /*    background-color: #ffffff; */
-  margin: 0 auto;
-  grid-template-columns: repeat(2, 1fr);
-  display: grid;
   grid-template-areas: "iphoneppal iphoneppal" "iphoneart1 iphoneart2" "iphoneart3 iphoneart4" "tienda tienda";
+  margin: 0 auto;
+  display: grid;
   -moz-column-gap: 15px;
        column-gap: 15px;
   row-gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 #mainSectionIphone article#iphoneppal {
   grid-area: iphoneppal;
-  /*    background-image: url("../images/iphone_principal.jpg"); */
   aspect-ratio: 16/5;
 }
 
@@ -384,13 +342,13 @@
 
 /******************************************************** && Main section COMPARADOR*/
 #mainSectionComparador {
-  margin: 0 auto;
-  grid-template-columns: repeat(3, 1fr);
-  display: grid;
   grid-template-areas: "comparappal comparappal comparappal" "comparaandroid comparaiphone1 comparaiphone2" "tienda tienda tienda";
-  -moz-column-gap: 35px;
-       column-gap: 35px;
+  margin: 0 auto;
+  display: grid;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
   row-gap: 15px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 #mainSectionComparador article#comparappal {
@@ -440,14 +398,13 @@
 
 /********************************************************** && Main section CONTACTA*/
 #mainSectionContacta {
-  /*    background-color: #ffffff; */
-  margin: 0 auto;
-  grid-template-columns: repeat(2, 1fr);
-  display: grid;
   grid-template-areas: "contacta1 contacta1" "contacta2 contacta2" "contacta3 contacta3" "contacta4 contacta4" "contacta5 contacta5" "contacta6 contacta7";
+  margin: 0 auto;
+  display: grid;
   -moz-column-gap: 15px;
        column-gap: 15px;
   row-gap: 15px;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 #mainSectionContacta article#contacta1 {
@@ -473,10 +430,6 @@
 }
 
 #formulario {
-  /*    display:flex;
-      flex-direction: column;
-      align-items:first baseline;
-  */
   width: 450px;
   padding: 16px;
   margin: auto;
@@ -547,13 +500,13 @@
 
 /********************************************************** && Main section COMPRA*/
 #mainSectionCompra {
-  margin: 0 auto;
-  grid-template-columns: repeat(1, 1fr);
-  display: grid;
   grid-template-areas: "compra1" "compra2" "compra3";
+  margin: 0 auto;
+  display: grid;
   -moz-column-gap: 15px;
        column-gap: 15px;
   row-gap: 15px;
+  grid-template-columns: repeat(1, 1fr);
 }
 
 #mainSectionCompra article#compra1 {
@@ -613,14 +566,13 @@
 }
 
 /************************************************************ && Footer */
-.mainFooter {
+.disclaimerFooter, .socialFooter, .mainFooter {
   background-color: #ffffff;
-  display: flex;
-  justify-content: space-between;
 }
 
-.socialFooter {
-  background-color: #ffffff;
+.mainFooter {
+  display: flex;
+  justify-content: space-between;
 }
 
 .socialFooter img {
@@ -628,16 +580,11 @@
   height: 20px;
 }
 
-.disclaimerFooter {
-  background-color: #ffffff;
-}
-
 .disclaimerFooter ul {
   display: flex;
   list-style: none;
   justify-content: space-between;
 }
-
 .disclaimerFooter ul li a {
   padding: 20px;
   color: black;

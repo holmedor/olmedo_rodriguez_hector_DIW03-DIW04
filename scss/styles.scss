@@ -1,43 +1,39 @@
-/* || GENERAL STYLES */
-/*COLORES UTILIZADOS:
-#343c40 Color letra
-#1B2328 Color enlaces
-#586070 Color botones 
-#ededed Color formulario
-#ffffff Color fondo
-*/
-/***************************************** || MAIN CONTAINERS */
-#indexContent {
-    margin: 0 auto;
-    width: 700px;
-}
+@use './abstract/variables';
+@use './abstract/main';
 
 /***************************************** && Header */
-#mainHeader {
-    background-color: #ffffff;
+%myheader {
     display: flex;
+}
+
+#mainHeader {
+    @extend %myheader;
+    background-color: variables.$color_fondo;
     justify-content: space-between;
     align-items: center;
 }
 
-#leftHeader img {
-    width: 75px;
-    height: 75px;
-}
-
 #rightHeader {
-    display: flex;
+    @extend %myheader;
     justify-content: stretch;
 }
 
+@mixin myimage($incremento) {
+    width: variables.$altura_anchura_minima + $incremento;
+    height: variables.$altura_anchura_minima + $incremento;
+}
+
 #rightHeader img {
-    width: 30px;
-    height: 30px;
+    @include myimage(10)
+}
+
+#leftHeader img {
+    @include myimage(55)
 }
 
 /***************************************** && Navigation bar */
 #mainNav ul {
-    background-color: #ffffff;
+    background-color: variables.$color_fondo;
     display: flex;
     list-style: none;
     justify-content: space-around;
@@ -46,7 +42,7 @@
 #mainNav ul li a {
     display: block;
     padding: 20px;
-    color: black;
+    color: variables.$negro;
     text-decoration: none;
 }
 
@@ -73,40 +69,41 @@
 #mainNav ul li a:hover {
     display: block;
     padding: 20px;
-    color: black;
+    color: variables.$negro;
     text-decoration: none;
     transition: 1s;
     background: rgba(255, 255, 255, .5);
     padding: 10px;
-    background-color: grey;
+    background-color: variables.$gris;
     border-radius: 6px;
 }
 
 #mainNav ul li a.seleccionada {
     display: block;
     padding: 20px;
-    color: black;
+    color: variables.$negro;
     text-decoration: underline;
     font-weight: bolder;
     font-size: x-large;
 }
 
 /***************************************** && Main section INDEX*/
-#mainSectionIndex {
+@mixin mysection($mygrid, $mygap) {
+    grid-template-areas: $mygrid;
     margin: 0 auto;
-    grid-template-columns: repeat(2, 1fr);
     display: grid;
-    grid-template-areas: "imagenppal imagenppal"
-        "slogan slogan"
-        "android iphone"
-        "tienda tienda";
-    column-gap: 15px;
-    row-gap: 15px;
+    column-gap: $mygap;
+    row-gap: $mygap;
 }
+
+#mainSectionIndex {
+    @include mysection(variables.$grid-index, 15px);
+    grid-template-columns: repeat(2, 1fr);
+}
+
 
 #mainSectionIndex article#imagenppal {
     grid-area: imagenppal;
-    /*    background-image: url("../images/imagen-principal.jpg"); */
     aspect-ratio: 16/5;
 }
 
@@ -127,17 +124,11 @@
     grid-area: android;
     display: flex;
     flex-direction: column-reverse;
-    height: 390px;
+    height: variables.$altura_seccion;
     border-radius: 25px;
     font-weight: bold;
     font-size: xx-large;
     text-align: left;
-    /*    text-justify: initial;
-    background-image: url("../images/android.jpg"); 
-    background-size: contain;
-    background-position: 100% 100%;
-    background-repeat: no-repeat;
-*/
 }
 
 #mainSectionIndex article#android a {
@@ -156,17 +147,11 @@
     grid-area: iphone;
     display: flex;
     flex-direction: column-reverse;
-    height: 390px;
+    height: variables.$altura_seccion;
     border-radius: 25px;
     font-weight: bold;
     font-size: xx-large;
     text-align: right;
-    /*    text-justify: initial;
-    background-image: url("../images/iphone.jpg"); 
-    background-size: contain; 
-    background-position: 100% 100%;
-    background-repeat: no-repeat;
-*/
 }
 
 #mainSectionIndex article#iphone a {
@@ -183,16 +168,9 @@
 
 #mainSectionIndex article a {
     text-decoration: none;
-    color: black;
+    color: variables.$negro;
 }
 
-/*
-#mainSectionIndex article img {
-    object-fit: cover;
-    width:100%;
-    height:100%;
-}
-*/
 #tienda {
     margin: 0 auto;
     column-gap: 15px;
@@ -207,12 +185,6 @@
     font-size: xx-large;
     text-align: center;
     aspect-ratio: 16/5;
-    /*    height: 400px;
-    background-image: url("../images/tienda.jpg");
-    background-size: contain;
-    background-position: 100% 100%;
-    background-repeat: no-repeat; 
-*/
 }
 
 #tienda article#tienda1 img {
@@ -227,27 +199,13 @@
     left: 5%;
 }
 
-/* 
-#tienda article img {
-    object-fit: cover;
-    width:100%;
-    height:100%;
-}
-*/
 /************************************************ && Main section ANDROID*/
 #mainSectionAndroid {
-    /*    background-color: #ffffff; */
-    margin: 0 auto;
+    @include mysection(variables.$grid-android, 15px);
     grid-template-columns: repeat(2, 1fr);
-    display: grid;
-    grid-template-areas: "androidmenu androidmenu"
-        "androidart1 androidart2"
-        "androidart3 androidart4"
-        "androidart5 ."
-        "tienda tienda";
-    column-gap: 15px;
-    row-gap: 15px;
 }
+
+
 
 #mainSectionAndroid article#androidmenu {
     grid-area: androidmenu;
@@ -281,7 +239,7 @@
 
 /******************************************************* && Navigation bar ANDROID*/
 #androidNav ul {
-    background-color: #ffffff;
+    background-color: variables.$color_fondo;
     display: flex;
     list-style: none;
     justify-content: space-between;
@@ -291,7 +249,7 @@
     padding: 15px;
     color: white;
     text-decoration: none;
-    background-color: #586070;
+    background-color: variables.$color_botones;
     border-radius: 15px;
     font-size: xx-large;
 }
@@ -300,13 +258,13 @@
     padding: 15px;
     color: white;
     text-decoration: none;
-    background-color: #586070;
+    background-color: variables.$color_botones;
     border-radius: 15px;
     font-size: xx-large;
     transition: 1s;
     background: rgba(255, 255, 255, .5);
     padding: 10px;
-    background-color: grey;
+    background-color: variables.$gris;
 }
 
 #androidNav ul li:nth-child(1) a {
@@ -335,21 +293,12 @@
 
 /******************************************************* && Main section IPHONE*/
 #mainSectionIphone {
-    /*    background-color: #ffffff; */
-    margin: 0 auto;
+    @include mysection(variables.$grid-iphone, 15px);
     grid-template-columns: repeat(2, 1fr);
-    display: grid;
-    grid-template-areas: "iphoneppal iphoneppal"
-                         "iphoneart1 iphoneart2"
-                         "iphoneart3 iphoneart4"
-                         "tienda tienda";
-    column-gap: 15px;
-    row-gap: 15px;
 }
 
 #mainSectionIphone article#iphoneppal {
     grid-area: iphoneppal;
-    /*    background-image: url("../images/iphone_principal.jpg"); */
     aspect-ratio: 16/5;
 }
 
@@ -383,14 +332,8 @@
 
 /******************************************************** && Main section COMPARADOR*/
 #mainSectionComparador {
-    margin: 0 auto;
+    @include mysection(variables.$grid-comparador, 15px);
     grid-template-columns: repeat(3, 1fr);
-    display: grid;
-    grid-template-areas: "comparappal comparappal comparappal"
-                         "comparaandroid comparaiphone1 comparaiphone2"
-                         "tienda tienda tienda";
-    column-gap: 35px;
-    row-gap: 15px;
 }
 
 #mainSectionComparador article#comparappal {
@@ -438,18 +381,8 @@
 
 /********************************************************** && Main section CONTACTA*/
 #mainSectionContacta {
-    /*    background-color: #ffffff; */
-    margin: 0 auto;
+    @include mysection(variables.$grid-contacta, 15px);
     grid-template-columns: repeat(2, 1fr);
-    display: grid;
-    grid-template-areas: "contacta1 contacta1"
-                         "contacta2 contacta2"
-                         "contacta3 contacta3"
-                         "contacta4 contacta4"
-                         "contacta5 contacta5"
-                         "contacta6 contacta7";
-    column-gap: 15px;
-    row-gap: 15px;
 }
 
 #mainSectionContacta article#contacta1 {
@@ -475,22 +408,17 @@
 }
 
 #formulario {
-    /*    display:flex;
-    flex-direction: column;
-    align-items:first baseline;
-*/
     width: 450px;
     padding: 16px;
     margin: auto;
-    background-color: grey;
+    background-color: variables.$gris;
     resize: none;
     display: block;
 }
 
 #formulario textarea {
     width: 100%;
-    height: 100px;
-
+    height: variables.$altura_anchura_minima + 80;
 }
 
 #afterform {
@@ -501,8 +429,8 @@
 
 #enviar {
     border-radius: 15px;
-    background-color: black;
-    color: #ffffff;
+    background-color: variables.$negro;
+    color: variables.$color_fondo;
     font-size: large;
     width: 100%;
     margin: 15px 0px 15px 0px;
@@ -548,15 +476,10 @@
 
 /********************************************************** && Main section COMPRA*/
 #mainSectionCompra {
-    margin: 0 auto;
+    @include mysection(variables.$grid-compra, 15px);
     grid-template-columns: repeat(1, 1fr);
-    display: grid;
-    grid-template-areas: "compra1"
-                         "compra2"
-                         "compra3";
-    column-gap: 15px;
-    row-gap: 15px;
 }
+
 
 #mainSectionCompra article#compra1 {
     grid-area: compra1;
@@ -576,22 +499,27 @@
     justify-content: center;
     align-items: center;
 }
+
 #mainSectionCompra article#compra4 {
     grid-area: compra4;
 }
+
 #mainSectionCompra article#compra1 img {
     width: 100%;
     height: 100%;
     object-fit: fill;
 }
+
 #mainSectionCompra table {
-    width:65%;
+    width: 65%;
 }
+
 #mainSectionCompra tr img {
     object-fit: cover;
     width: 60%;
     height: 60%;
 }
+
 .tcantpre {
     text-align: right;
     text-justify: left;
@@ -600,6 +528,7 @@
     white-space: nowrap;
     margin-left: 0;
 }
+
 .tdetalle {
     text-align: right;
     text-justify: center;
@@ -607,36 +536,40 @@
 }
 
 /************************************************************ && Footer */
+%myfooter {
+    background-color: variables.$color_fondo;
+}
+
 .mainFooter {
-    background-color: #ffffff;
+    @extend %myfooter;
     display: flex;
     justify-content: space-between;
 }
 
 .socialFooter {
-    background-color: #ffffff;
-}
+    @extend %myfooter;
 
-.socialFooter img {
-    width: 20px;
-    height: 20px;
+    img {
+        width: variables.$altura_anchura_minima;
+        height: variables.$altura_anchura_minima;
+    }
 }
 
 .disclaimerFooter {
-    background-color: #ffffff;
-}
+    @extend %myfooter;
 
-.disclaimerFooter ul {
-    display: flex;
-    list-style: none;
-    justify-content: space-between;
-}
+    ul {
+        display: flex;
+        list-style: none;
+        justify-content: space-between;
 
-.disclaimerFooter ul li a {
-    padding: 20px;
-    color: black;
-    text-decoration: none;
-    font-size: smaller;
+        li a {
+            padding: 20px;
+            color: variables.$negro;
+            text-decoration: none;
+            font-size: smaller;
+        }
+    }
 }
 
 /*********************************************************TARJETAS*/
@@ -646,8 +579,8 @@
     grid-template-areas: "cardleft cardright";
     column-gap: 5px;
     border-radius: 15px;
-    background-color: #586070;
-    color: #ffffff;
+    background-color: variables.$color_botones;
+    color: variables.$color_fondo;
     margin-left: 5%;
     margin-right: 5%;
 }
@@ -692,8 +625,8 @@
 
 .cardright button {
     border-radius: 10px;
-    background-color: #586070;
-    color: #ffffff;
+    background-color: variables.$color_botones;
+    color: variables.$color_fondo;
     font-size: x-small;
     margin: auto auto;
 }
@@ -703,8 +636,8 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: #ffffff;
-    color: #343c40;
+    background-color: variables.$color_fondo;
+    color: variables.$color_letra;
     margin-left: 15%;
     margin-right: 15%;
 }

@@ -1,11 +1,3 @@
-/* || GENERAL STYLES */
-/*COLORES UTILIZADOS:
-#343c40 Color letra
-#1B2328 Color enlaces
-#586070 Color botones 
-#ededed Color formulario
-#ffffff Color fondo
-*/
 /***************************************** || MAIN CONTAINERS */
 #indexContent {
     margin: 0 auto;
@@ -106,7 +98,6 @@
 
 #mainSectionIndex article#imagenppal {
     grid-area: imagenppal;
-    /*    background-image: url("../images/imagen-principal.jpg"); */
     aspect-ratio: 16/5;
 }
 
@@ -132,12 +123,6 @@
     font-weight: bold;
     font-size: xx-large;
     text-align: left;
-    /*    text-justify: initial;
-    background-image: url("../images/android.jpg"); 
-    background-size: contain;
-    background-position: 100% 100%;
-    background-repeat: no-repeat;
-*/
 }
 
 #mainSectionIndex article#android a {
@@ -161,12 +146,6 @@
     font-weight: bold;
     font-size: xx-large;
     text-align: right;
-    /*    text-justify: initial;
-    background-image: url("../images/iphone.jpg"); 
-    background-size: contain; 
-    background-position: 100% 100%;
-    background-repeat: no-repeat;
-*/
 }
 
 #mainSectionIndex article#iphone a {
@@ -186,13 +165,6 @@
     color: black;
 }
 
-/*
-#mainSectionIndex article img {
-    object-fit: cover;
-    width:100%;
-    height:100%;
-}
-*/
 #tienda {
     margin: 0 auto;
     column-gap: 15px;
@@ -207,12 +179,6 @@
     font-size: xx-large;
     text-align: center;
     aspect-ratio: 16/5;
-    /*    height: 400px;
-    background-image: url("../images/tienda.jpg");
-    background-size: contain;
-    background-position: 100% 100%;
-    background-repeat: no-repeat; 
-*/
 }
 
 #tienda article#tienda1 img {
@@ -227,16 +193,8 @@
     left: 5%;
 }
 
-/* 
-#tienda article img {
-    object-fit: cover;
-    width:100%;
-    height:100%;
-}
-*/
 /************************************************ && Main section ANDROID*/
 #mainSectionAndroid {
-    /*    background-color: #ffffff; */
     margin: 0 auto;
     grid-template-columns: repeat(2, 1fr);
     display: grid;
@@ -335,7 +293,6 @@
 
 /******************************************************* && Main section IPHONE*/
 #mainSectionIphone {
-    /*    background-color: #ffffff; */
     margin: 0 auto;
     grid-template-columns: repeat(2, 1fr);
     display: grid;
@@ -349,7 +306,6 @@
 
 #mainSectionIphone article#iphoneppal {
     grid-area: iphoneppal;
-    /*    background-image: url("../images/iphone_principal.jpg"); */
     aspect-ratio: 16/5;
 }
 
@@ -438,7 +394,6 @@
 
 /********************************************************** && Main section CONTACTA*/
 #mainSectionContacta {
-    /*    background-color: #ffffff; */
     margin: 0 auto;
     grid-template-columns: repeat(2, 1fr);
     display: grid;
@@ -475,10 +430,6 @@
 }
 
 #formulario {
-    /*    display:flex;
-    flex-direction: column;
-    align-items:first baseline;
-*/
     width: 450px;
     padding: 16px;
     margin: auto;

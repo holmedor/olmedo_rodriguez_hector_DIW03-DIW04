@@ -1,0 +1,35 @@
+//COLORES UTILIZADOS: definidos como variables en el fichero ./abstract/variables
+$color_letra: #343c40; //Color letra (se usa sólo en un sitio)
+$color_enlaces: #1B2328; //Color enlaces (no se usa)
+$color_botones: #586070; //Color botones (se usa en 4 sitios)
+$color_formulario: #ededed; //Color formulario (no se usa)
+$color_fondo: #ffffff; // Color fondo (se usa en 10 sitios)
+$gris: grey; // Gris (se usa 3 veces)
+$negro: black; // Negro (se usa 6 veces)
+$altura_seccion: 390px; // Altura de sección (se usa 2 veces)
+$altura_anchura_minima: 20px; // Defino un valor mínimo para altura y anchura
+$grid-index: "imagenppal imagenppal"
+    "slogan slogan"
+    "android iphone"
+    "tienda tienda";
+$grid-android: "androidmenu androidmenu"
+    "androidart1 androidart2"
+    "androidart3 androidart4"
+    "androidart5 ."
+    "tienda tienda";
+$grid-iphone: "iphoneppal iphoneppal"
+    "iphoneart1 iphoneart2"
+    "iphoneart3 iphoneart4"
+    "tienda tienda";
+$grid-comparador: "comparappal comparappal comparappal"
+    "comparaandroid comparaiphone1 comparaiphone2"
+    "tienda tienda tienda";
+$grid-contacta: "contacta1 contacta1"
+    "contacta2 contacta2"
+    "contacta3 contacta3"
+    "contacta4 contacta4"
+    "contacta5 contacta5"
+    "contacta6 contacta7";
+$grid-compra: "compra1"
+    "compra2"
+    "compra3";
