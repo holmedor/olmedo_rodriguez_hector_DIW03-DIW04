@@ -427,14 +427,14 @@
     flex-flow: row;
 }
 
-#enviar {
-    border-radius: 15px;
-    background-color: variables.$negro;
-    color: variables.$color_fondo;
-    font-size: large;
-    width: 100%;
-    margin: 15px 0px 15px 0px;
-}
+
+
+
+
+
+
+
+
 
 #mainSectionContacta article#contacta5 {
     grid-area: contacta5;
@@ -522,7 +522,7 @@
 
 .tcantpre {
     text-align: right;
-    text-justify: left;
+/*    text-justify: left; */
     font-weight: bolder;
     font-size: larger;
     white-space: nowrap;
@@ -531,7 +531,7 @@
 
 .tdetalle {
     text-align: right;
-    text-justify: center;
+/*    text-justify: center; */
     white-space: nowrap;
 }
 
@@ -589,14 +589,14 @@
     grid-area: cardleft;
     display: flex;
     flex-direction: column;
-    align-content: left;
+/*    align-content: left; */
 }
 
 .cardright {
     grid-area: cardright;
     display: flex;
     flex-direction: column;
-    align-items: left;
+/*    align-items: left; */
 }
 
 .cardright .modelo {
@@ -623,13 +623,16 @@
     justify-content: right;
 }
 
-.cardright button {
-    border-radius: 10px;
-    background-color: variables.$color_botones;
-    color: variables.$color_fondo;
-    font-size: x-small;
-    margin: auto auto;
-}
+
+
+
+
+
+
+
+
+
+
 
 .cardcomp {
     display: flex;
@@ -660,4 +663,28 @@
 
 .comparer td {
     border-top: groove;
+}
+
+@mixin miboton ($colorfondo, $radioboton) {
+    @if $colorfondo==#586070 {
+        font-size: x-small;
+        margin: auto auto;
+    }
+
+    @else {
+        font-size: large;
+        width: 100%;
+        margin: 15px 0px 15px 0px;
+    }
+
+    border-radius: $radioboton;
+    color: #ffffff;
+}
+
+#enviar {
+    @include miboton(black,variables.$altura_anchura_minima - 5);
+}
+
+.cardright button {
+    @include miboton(#586070,variables.$altura_anchura_minima - 10);
 }

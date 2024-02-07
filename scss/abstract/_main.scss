@@ -1,5 +1,16 @@
 /***************************************** || MAIN CONTAINERS */
 #indexContent {
     margin: 0 auto;
-    width: 700px;
+    @media screen and (min-width: 480px) {
+        width: 400px;
+    }
+    @media screen and (min-width: 768px) {
+        width: 600px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        width: 700px;
+    }
+
 }
+

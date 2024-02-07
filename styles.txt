@@ -1,0 +1,20 @@
+Los scss y css generado están en:
+
+olmedo_rodriguez_hector_DIW04\scss
+
+pero he dejado copias del css original:
+
+styles.original.css;
+
+del css generado a partir del scss:
+
+styles.sincomprimir.css;
+
+y del css comprimido generado a partir del scss:
+
+styles.comprimido.css
+
+en esta ubicación:
+
+olmedo_rodriguez_hector_DIW04
+
